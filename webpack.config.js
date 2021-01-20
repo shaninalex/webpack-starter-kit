@@ -1,61 +1,15 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { merge } = require('webpack-merge');
+const commonConfig = require('./webpack/webpack.common');
 
+module.exports = (env, argv) => {
+  if (!argv.mode) {
+    throw new Error('You must pass an --mode flag into your build for webpack to work!');
+  }
 
-module.exports = {
-  mode: "development",
-  entry: './src/js/index.js',
-  module: {
-    rules: [
-      // JS loader
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
-      },
+  process.env.BABEL_ENV = argv.mode;
+  process.env.NODE_ENV = argv.mode;
 
-      // HTML loader
-      {
-        test: /\.html$/,
-        use: [
-          {
-            loader: "html-loader?minimize=false",
-          }
-        ]
-      },
+  const envConfig = require(`./webpack/webpack.${argv.mode}.js`);
 
-      // ASSETS loader
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-          outputPath: 'img'
-        },
-      },
-
-      // STYLES loader
-      {
-        test: /\.scss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader"
-        ]
-      }
-    ]
-  },
-
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/index.html",
-      filename: "index.html"
-    }),
-
-    new MiniCssExtractPlugin()
-  ],
-  // devtool: "source-map"
+  return merge(commonConfig, envConfig);
 };

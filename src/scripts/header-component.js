@@ -8,7 +8,6 @@ class HeaderComponent extends Component {
   };
 
   handleChange = (event) => {
-    console.log(event);
     this.setState({darkMode: !this.state.darkMode});
   };
 
@@ -21,13 +20,11 @@ class HeaderComponent extends Component {
   }
 
   render() {
-    const {title} = this.props;
     let modeClass = this.state.darkMode ? "dark-mode" : "light-mode";
     let checked = this.state.darkMode ? "checked" : "unchecked";
 
     return (
       <div className={`box content ${modeClass}`}>
-        <h1>{title}</h1>
         <p>I was built with a Class component extending React.Component.</p>
         <label className="checkbox">
           <input
