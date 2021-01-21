@@ -7,9 +7,9 @@ import ReactDOM from 'react-dom';
 
 import HeaderComponent from "./header-component";
 
-if (document.getElementById('header')){
+if (document.getElementById('header-menu')){
   ReactDOM.render(
     <HeaderComponent />,
-    document.getElementById('header'));
+    document.getElementById('header-menu'));
 }
 

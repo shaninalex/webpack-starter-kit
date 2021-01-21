@@ -1,31 +1,26 @@
-@import '~normalize.css/normalize.css';
+@import './variables';
 @import './base';
-@import './media';
-@import './fonts';
 
-// custom styles
+.page-header {
+  background-color: $color-gray;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
 
-html {
-  height: 100%;
-}
-
-body {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 100%;
-}
-
-a {
-  position: relative;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: inline-block;
-
-  img {
-    display: inline-block;
-    vertical-align: middle;
-    width: 80px;
+  .header-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
+
+  a {
+    & + a {
+      &:before { content: "|"; margin: 0 0.5rem }
+    }
+  }
+}
+
+.container {
+  max-width: 992px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }

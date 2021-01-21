@@ -4,35 +4,21 @@ import {Component} from 'react';
 class HeaderComponent extends Component {
 
   state = {
-    darkMode: true
+    menu: [
+      {id: 1, link:'/', title: 'Home'},
+      {id: 2, link:'about.html', title: 'About'}
+    ]
   };
-
-  handleChange = (event) => {
-    this.setState({darkMode: !this.state.darkMode});
-  };
-
-  componentWillMount() {
-    // could do something like pull state from API
-  }
-
-  componentDidMount() {
-    console.log('HeaderComponent did mount');
-  }
 
   render() {
-    let modeClass = this.state.darkMode ? "dark-mode" : "light-mode";
-    let checked = this.state.darkMode ? "checked" : "unchecked";
-
+    const { menu } = this.state;
+    let menuList = menu.map(item => <a key={item.id} href={item.link}>{item.title}</a>);
     return (
-      <div className={`box content ${modeClass}`}>
-        <p>I was built with a Class component extending React.Component.</p>
-        <label className="checkbox">
-          <input
-            type="checkbox"
-            defaultChecked={checked}
-            onChange={this.handleChange}/>
-          {' '}Dark Mode
-        </label>
+      <div className="header-menu">
+        <div>Brand</div>
+        <nav>
+          {menuList}
+        </nav>
       </div>
     );
   }

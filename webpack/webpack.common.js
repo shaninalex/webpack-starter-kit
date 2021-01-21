@@ -3,6 +3,17 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const paths = require('./paths');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+
+const pages = [
+  'index',
+  'about'
+];
+
+
+const PagesHTMLPlugins = pages.map(page =>
+  new HtmlWebpackPlugin({ template: `./${page}.html`, filename: `${page}.html`}));
+
+
 module.exports = {
   context: paths.src,
   entry: {
@@ -47,10 +58,6 @@ module.exports = {
           },
         ],
       },
-      // {
-      //   test: /\.html$/,
-      //   use: 'html-loader',
-      // },
       {
         test: /\.(woff2?|eot|ttf|otf)$/,
         use: {
@@ -79,24 +86,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'stylesheets/[name].css',
     }),
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //       from: paths.static,
-    //     },
-    //   ],
-    // }),
-    new HtmlWebpackPlugin({
-      template: './index.html',
-      filename: 'index.html',
-      inject: true,
-      minify: false,
-    }),
-    new HtmlWebpackPlugin({
-      template: './about.html',
-      filename: 'about.html',
-      inject: true,
-      minify: false,
-    }),
+    ...PagesHTMLPlugins
   ],
 };

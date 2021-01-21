@@ -1,15 +1,9 @@
 html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+  font-family: $font-base;
+  font-size: 1rem;
 }
 
 body {
-  background-color: #fff;
-  font-family: Roboto, sans-serif;
-  line-height: 1.4;
+  margin: 0;
+  padding: 0;
 }
