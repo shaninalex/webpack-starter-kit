@@ -1,0 +1,22 @@
+// all the staff that not actualy compilled
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+
+// basic requirements
+@import 'base/grid';
+@import 'base/fonts';
+@import 'base/reset';
+@import 'base/typography';
+
+// Different types of components
+@import 'components/buttons';
+@import 'components/forms';
+
+// page related staff
+// NOTE: for landing it can be sections instead of layouts
+@import 'layouts/home';
+@import 'layouts/about';
+
+// some utility classes
+@import 'utilites/spaces';

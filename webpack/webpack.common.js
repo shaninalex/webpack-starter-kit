@@ -37,7 +37,7 @@ module.exports = {
             loader: 'css-loader',
             options: {
               importLoaders: 2,
-              sourceMap: true,
+              sourceMap: false,
             },
           },
           {
@@ -46,13 +46,13 @@ module.exports = {
               postcssOptions: {
                 plugins: ['autoprefixer', 'postcss-flexbugs-fixes'],
               },
-              sourceMap: true,
+              sourceMap: false,
             },
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true,
+              sourceMap: false,
             },
           },
         ],
@@ -83,7 +83,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'stylesheets/[name].css',
+      filename: 'scss/[name].css',
     }),
     ...PagesHTMLPlugins
   ],
