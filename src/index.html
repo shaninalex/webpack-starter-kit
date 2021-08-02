@@ -7,11 +7,20 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
 </head>
 
 <body>
 
+    <div class="main-menu" id="main-menu">
+        <ul>
+            <li><a href="#">Menu item 1</a></li>
+            <li><a href="#">Menu item 1</a></li>
+            <li><a href="#">Menu item 1</a></li>
+        </ul>
+        <button toggle-menu>x</button>
+    </div>
 
     <main>
         <%= require('html-loader!./parts/header.html') %>
@@ -22,8 +31,32 @@
             </div>
         </div>
 
+        <div class="page">
+            <div class="page-container gallery-page">
+                <div class="gallery">
+                    <div>
+                        <img src="../static/img/img01.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="../static/img/img02.jpg" alt="">
+                    </div>
+                    <div>
+                        <img src="../static/img/img03.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="page" style="background-color: lightgray;">
+            <div class="page-container">
+                <!-- <iframe width="70%" height="70%" 
+                    src="https://www.youtube.com/embed/cB4jHN2NtCk" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe> -->
+            </div>
+        </div>
     </main>
 </body>
-
 </html>
