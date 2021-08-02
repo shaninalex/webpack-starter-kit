@@ -12,11 +12,11 @@
 // Different types of components
 @import 'components/buttons';
 @import 'components/forms';
+@import 'components/header';
 
 // page related staff
 // NOTE: for landing it can be sections instead of layouts
 @import 'layouts/home';
-@import 'layouts/about';
 
 // some utility classes
 @import 'utilites/spaces';

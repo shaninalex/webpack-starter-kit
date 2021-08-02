@@ -1,0 +1,22 @@
+html, body {
+    background-color: $color-black;
+    color: $color-white;
+}
+
+.page {
+    height: 100vh;
+    position: relative;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $color-white;
+    }
+
+    &-container {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

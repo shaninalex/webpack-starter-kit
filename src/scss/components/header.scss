@@ -1,0 +1,40 @@
+.page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.social-icons {
+
+    ul {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+
+        li {
+
+            a {
+                display: block;
+                color: $color-white;
+            }
+        }
+    }
+
+    i {
+        font-size: 36px;
+    }
+}
+
+.logo {
+    display: block;
+
+    img {
+        display: block;
+        width: 150px;
+    }
+}
