@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Charlemagne Std';
+    src: url('CharlemagneStd-Bold.eot');
+    src: url('CharlemagneStd-Bold.eot?#iefix') format('embedded-opentype'),
+        url('CharlemagneStd-Bold.woff2') format('woff2'),
+        url('CharlemagneStd-Bold.woff') format('woff'),
+        url('CharlemagneStd-Bold.ttf') format('truetype'),
+        url('CharlemagneStd-Bold.svg#CharlemagneStd-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
